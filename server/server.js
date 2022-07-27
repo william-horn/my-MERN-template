@@ -14,6 +14,10 @@
 | ABOUT DOCUMENT |
 ==================================================================================================================================
 
+npm installs:
+-------------
+npm i express apollo-server-express mongoose apollo-server bcrypt graphql
+
 ==================================================================================================================================
 
 ? @doc-todo
@@ -51,7 +55,7 @@ const PORT = process.env.PORT || 3001;
 const apolloServer = new ApolloServer({
     typeDefs,
     resolvers,
-    context: authMiddleware,
+    // context: authMiddleware,
 });
 
 
@@ -88,13 +92,12 @@ const startApolloServer = async () => {
     dbConnection.once("open", async () => {
         console.log("database is open");
 
-            // await seed.plantUsers();
-            // await seed.plantEvents();
-            // console.log('seeds planted!');
-
+        // -------------------------- //
+        // -> seed runners go here <- //
+        // -------------------------- //
+        
         app.listen(PORT, () => {
             console.log(`server running on port: ${PORT}`);
-            // console.log(`Use GraphQL at http://localhost:${PORT}${apolloServer.graphqlPath}`);
         });
     });
 };

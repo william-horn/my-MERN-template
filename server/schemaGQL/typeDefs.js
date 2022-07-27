@@ -7,21 +7,27 @@ const typeDefs = gql`
         ok: Boolean
     }
 
-    type BazObject {
+    type BazOut {
         keyOne: String
         keyTwo: String
         keyThree: String 
     }
 
+    input BazIn {
+        keyOne: String
+        keyTwo: String
+        keyThree: String
+    }
+
     type TestResult {
         foo: String
         bar: String
-        baz: BazObject
+        baz: BazOut
     }
 
     input TestInput {
         bar: String
-        baz: BazObject
+        baz: BazIn
     }
 
     type Query {
@@ -34,4 +40,4 @@ const typeDefs = gql`
 
 `;
 
-export default typeDefs;
+module.exports = typeDefs;
