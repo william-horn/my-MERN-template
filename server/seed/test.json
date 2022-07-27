@@ -1,0 +1,21 @@
+
+
+[
+    {
+        "foo": "valueA1",
+        "bar": "valueB1"
+    },
+    {
+        "foo": "valueA2",
+        "bar": "valueB2"
+    },
+    {
+        "foo": "valueA3",
+        "bar": "valueB3"
+    },
+    {
+        "foo": "valueA4",
+        "bar": "valueB4"
+    }
+]
+
