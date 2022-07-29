@@ -1,17 +1,88 @@
-
 /*
-npm installs (client-side)
-npm i react-router-dom
+==========
+| SERVER |
+==================================================================================================================================
+
+? @author:          William J. Horn
+? @doc-name:        App.js
+? @doc-created:     00/00/0000
+
+==================================================================================================================================
+
+? @doc-info
+==================
+| ABOUT DOCUMENT |
+==================================================================================================================================
+
+npm installs:
+-------------
+npm i react-router-dom graphql @apollo/client styled-components
+
+
+==================================================================================================================================
+
+? @doc-todo
+=================
+| DOCUMENT TODO |
+==================================================================================================================================
+
+==================================================================================================================================
 */
 
-import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
+/* ---------------- */
+/* Import Internals */
+/* ---------------- */
 import Test from './global-components/Test';
 
+/* ---------------- */
+/* Import Externals */
+/* ---------------- */
+
+// React router
+import { 
+    BrowserRouter, 
+    Route, 
+    Routes, 
+    Navigate 
+} from 'react-router-dom';
+
+// Apollo client
+import {
+    ApolloClient,
+    ApolloProvider,
+    InMemoryCache,
+    // createHttpLink
+} from "@apollo/client";
+
+/* ---------------------------- */
+/* Apollo Client Initialization */
+/* ---------------------------- */
+// const httpLink = createHttpLink({
+//     uri: process.env.NODE_ENV === 'production' 
+//         ? '/graphql'
+//         : 'http://localhost:3001/graphql'
+// });
+
+const client = new ApolloClient({
+    // link: authLink.concat(httpLink),
+    uri: process.env.NODE_ENV === 'production' 
+        ? '/graphql'
+        : 'http://localhost:3001/graphql',
+
+    cache: new InMemoryCache(),
+});
+  
+
+/* ------------------ */
+/* Main App Component */
+/* ------------------ */
 function App() {
     return (
-        <BrowserRouter>
-            <Test/>
-        </BrowserRouter>
+        <ApolloProvider client={client}>
+            <BrowserRouter>
+                <Test/>
+            </BrowserRouter>
+        </ApolloProvider>
     );
 }
 

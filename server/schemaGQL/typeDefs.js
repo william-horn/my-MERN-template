@@ -2,7 +2,7 @@ const { gql } = require("apollo-server-express");
 
 const typeDefs = gql`
 
-    type Response {
+    type ResponseOut {
         message: String
         ok: Boolean
     }
@@ -19,23 +19,24 @@ const typeDefs = gql`
         keyThree: String
     }
 
-    type TestResult {
+    type TestOut {
         foo: String
         bar: String
         baz: BazOut
+        response: ResponseOut
     }
 
-    input TestInput {
+    input TestIn {
         bar: String
         baz: BazIn
     }
 
     type Query {
-        getTest: TestResult
+        getTest(foo: String): TestOut
     }
 
     type Mutation {
-        postTest(foo: String, inputPayload: TestInput): Response
+        postTest(foo: String, inputPayload: TestIn): ResponseOut
     }
 
 `;
