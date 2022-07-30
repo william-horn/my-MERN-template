@@ -25,6 +25,9 @@ npm i express apollo-server-express mongoose apollo-server bcrypt graphql
 | DOCUMENT TODO |
 ==================================================================================================================================
 
+todo: add user authentication boilerplate w/ JWT 
+todo: add react-redux boilerplate
+
 ==================================================================================================================================
 */
 
