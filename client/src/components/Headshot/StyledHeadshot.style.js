@@ -79,7 +79,7 @@ export default styled.div`
   }
 
   &:hover {
-    box-shadow: 0 0 20px black;
+    box-shadow: 0 0 10px black;
   }
 
   &:hover .headshot-content,

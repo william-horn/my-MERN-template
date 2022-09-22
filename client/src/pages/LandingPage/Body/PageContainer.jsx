@@ -1,5 +1,6 @@
 
 import React from 'react';
+import StyledPageContainer from './StyledPageContainer.style';
 
 const PageLoader = ({ children, currentPage }) => {
   let pages;
@@ -10,11 +11,10 @@ const PageLoader = ({ children, currentPage }) => {
     pages = [children];
   }
 
-  console.log('from pageloader: ', children, children.map, currentPage);
   return (
-    <>
+    <StyledPageContainer>
       {pages.filter(page => page.props.name === currentPage)}
-    </>
+    </StyledPageContainer>
   );
 };
 

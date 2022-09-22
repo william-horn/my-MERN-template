@@ -3,18 +3,20 @@
 import React from 'react';
 import StyledBody from './StyledBody.style';
 import { useStateContext } from '../../../providers/StateProvider';
-import PageLoader from './PageLoader';
+import PageContainer from './PageContainer';
 import HomePage from './pages/Home';
+import BackgroundImage from '../../../components/BackgroundImage';
+import { images } from '../../../assets';
 
 const Body = () => {
   const globalState = useStateContext();
   
   return (
     <StyledBody>
-      <PageLoader currentPage={globalState.currentPage}>
-        <HomePage name="chris"/>
+      <PageContainer currentPage={globalState.currentPage}>
+        <HomePage name="home"/>
         <HomePage/>
-      </PageLoader>
+      </PageContainer>
     </StyledBody>
   );
 };

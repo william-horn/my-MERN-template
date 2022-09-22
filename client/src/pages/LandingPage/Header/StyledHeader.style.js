@@ -5,8 +5,13 @@ import styled from 'styled-components';
 export default styled.header`
   background-color: #ff7300;
   width: 100%;
-  padding-bottom: 20px;
-  padding-top: 10px;
+  position: relative;
+  margin-bottom: 20px;
+
+  .header-body {
+    padding-top: 20px;
+    padding-bottom: 10px;
+  }
 
   .heading-container {
     margin-bottom: 20px;

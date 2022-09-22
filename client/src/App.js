@@ -33,6 +33,7 @@ npm i react-router-dom graphql @apollo/client styled-components
 /* Import Internals */
 /* ---------------- */
 import Test from './components/Test';
+import styled from 'styled-components';
 
 /* ---------------- */
 /* Import Externals */
@@ -83,15 +84,15 @@ const client = new ApolloClient({
 /* Main App Component */
 /* ------------------ */
 function App() {
-    return (
-        <ApolloProvider client={client}>
-            <BrowserRouter>
-                <Routes>
-                  <Route path="/" element={<LandingPage/>}/>
-                </Routes>
-            </BrowserRouter>
-        </ApolloProvider>
-    );
+  return (
+    <ApolloProvider client={client}>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<LandingPage/>}/>
+        </Routes>
+      </BrowserRouter>
+    </ApolloProvider>
+  );
 }
 
 export default App;

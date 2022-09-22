@@ -5,6 +5,7 @@ import StyledHeader from './StyledHeader.style';
 import { images } from '../../../assets';
 import { v4 as uuidv4 } from 'uuid';
 import { useStateContext } from '../../../providers/StateProvider';
+import BackgroundImage from '../../../components/BackgroundImage';
 
 const Header = (props) => {
   const globalState = useStateContext();
@@ -26,21 +27,24 @@ const Header = (props) => {
 
   return (
     <StyledHeader>
-      <div className="heading-container">
-        <h1 onClick={changePage('home', 'system')}>Jwsband</h1>
-      </div>
-      <div className="header-content">
-        <div className="members-container">
-          {groupMembers.map(data => 
-            <Headshot
-              key={uuidv4()}
-              size='125px' 
-              name={data.name} 
-              img={data.img}
-              onClick={changePage(data.page, 'profile')}
-              active={globalState.currentPage === data.page} // initial, true, false
-            />
-          )}
+      <BackgroundImage img={images.backgrounds.SquadPic2} opacity="0.3"/>
+      <div className="header-body">
+        <div className="heading-container">
+          <h1 onClick={changePage('home', 'system')}>Jwsband</h1>
+        </div>
+        <div className="header-content">
+          <div className="members-container">
+            {groupMembers.map(data => 
+              <Headshot
+                key={uuidv4()}
+                size='125px' 
+                name={data.name} 
+                img={data.img}
+                onClick={changePage(data.page, 'profile')}
+                active={globalState.currentPage === data.page} // initial, true, false
+              />
+            )}
+          </div>
         </div>
       </div>
     </StyledHeader>
