@@ -1,11 +1,11 @@
 /*
 ==========
-| SERVER |
+| CLIENT |
 ==================================================================================================================================
 
 ? @author:          William J. Horn
 ? @doc-name:        App.js
-? @doc-created:     00/00/0000
+? @doc-created:     09/20/2022
 
 ==================================================================================================================================
 
@@ -32,7 +32,7 @@ npm i react-router-dom graphql @apollo/client styled-components
 /* ---------------- */
 /* Import Internals */
 /* ---------------- */
-import Test from './global-components/Test';
+import Test from './components/Test';
 
 /* ---------------- */
 /* Import Externals */
@@ -53,6 +53,12 @@ import {
     InMemoryCache,
     // createHttpLink
 } from "@apollo/client";
+
+// Import pages
+import {
+  LandingPage
+} from './pages';
+
 
 /* ---------------------------- */
 /* Apollo Client Initialization */
@@ -80,7 +86,9 @@ function App() {
     return (
         <ApolloProvider client={client}>
             <BrowserRouter>
-                <Test/>
+                <Routes>
+                  <Route path="/" element={<LandingPage/>}/>
+                </Routes>
             </BrowserRouter>
         </ApolloProvider>
     );

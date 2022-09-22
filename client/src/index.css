@@ -9,4 +9,7 @@ Global CSS Selectors
     margin: 0;
 }
 
+.wireframe * {
+  outline: 1px solid blue !important;
+}
 
