@@ -32,8 +32,10 @@ npm i react-router-dom graphql @apollo/client styled-components
 /* ---------------- */
 /* Import Internals */
 /* ---------------- */
+import React, { useEffect } from 'react';
 import Test from './components/Test';
 import styled from 'styled-components';
+import { Event } from 'pseudo-events';
 
 /* ---------------- */
 /* Import Externals */
@@ -84,6 +86,8 @@ const client = new ApolloClient({
 /* Main App Component */
 /* ------------------ */
 function App() {
+
+
   return (
     <ApolloProvider client={client}>
       <BrowserRouter>

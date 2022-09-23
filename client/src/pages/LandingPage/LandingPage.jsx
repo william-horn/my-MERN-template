@@ -6,8 +6,7 @@ import StyledPage from './StyledPage.style';
 import Header from './Header';
 import Body from './Body';
 
-const LandingPage = () => {
-  console.log('Re-rendered: LANDING PAGE');
+const LandingPage = ({ }) => {
 
   const [currentPage, setCurrentPage] = useState('home'); // home | will | josh | ...members
   const [currentPageType, setCurrentPageType] = useState('system'); // system | profile

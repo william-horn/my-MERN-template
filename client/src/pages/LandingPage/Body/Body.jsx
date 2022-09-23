@@ -3,8 +3,9 @@
 import React from 'react';
 import StyledBody from './StyledBody.style';
 import { useStateContext } from '../../../providers/StateProvider';
-import PageContainer from './PageContainer';
+import PageSelector from './PageSelector';
 import HomePage from './pages/Home';
+import Profile from './pages/Profile';
 import BackgroundImage from '../../../components/BackgroundImage';
 import { images } from '../../../assets';
 
@@ -13,10 +14,10 @@ const Body = () => {
   
   return (
     <StyledBody>
-      <PageContainer currentPage={globalState.currentPage}>
+      <PageSelector currentPage={globalState.currentPage}>
         <HomePage name="home"/>
-        <HomePage/>
-      </PageContainer>
+        <Profile name="will"/>
+      </PageSelector>
     </StyledBody>
   );
 };

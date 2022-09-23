@@ -1,8 +1,8 @@
 
 import React from 'react';
-import StyledPageContainer from './StyledPageContainer.style';
+import StyledPageSelector from './StyledPageSelector.style';
 
-const PageLoader = ({ children, currentPage }) => {
+const PageSelector = ({ children, currentPage }) => {
   let pages;
 
   if (Array.isArray(children)) {
@@ -12,11 +12,11 @@ const PageLoader = ({ children, currentPage }) => {
   }
 
   return (
-    <StyledPageContainer>
+    <StyledPageSelector>
       {pages.filter(page => page.props.name === currentPage)}
-    </StyledPageContainer>
+    </StyledPageSelector>
   );
 };
 
-export default PageLoader;
+export default PageSelector;
 

@@ -2,14 +2,14 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { images } from '../../../../assets';
 import BackgroundImage from '../../../../components/BackgroundImage';
-import StyledHome from './StyledHome.style';
+import StyledProfile from './StyledProfile.style';
 import { v4 as uuidv4 } from 'uuid';
 import Carousel from '../../../../components/Carousel';
 
-const Home = (props) => {
+const Profile = (props) => {
 
   return (
-    <StyledHome>
+    <StyledProfile>
       <header>
         <h2>Welcome to Jwsband</h2>
         <p>Jwsband is a group of lifelong friends that just do weird shit sometimes but it's cool.</p>
@@ -26,8 +26,8 @@ const Home = (props) => {
           </div>
         </div>
       </div>
-    </StyledHome>
+    </StyledProfile>
   );
 };
 
-export default Home;
+export default Profile;

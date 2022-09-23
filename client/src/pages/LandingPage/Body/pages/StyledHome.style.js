@@ -8,6 +8,10 @@ export default styled.div`
     margin-bottom: 40px;
   }
 
+  header p {
+    color: #e17e27;
+  }
+
   h2 {
     margin: 0 auto;
     text-align: center;
@@ -27,9 +31,9 @@ export default styled.div`
   button {
     border: 0;
     border-radius: 15px;
-    background-color: #ffa600;
+    background-color: #be5e0d;
     color: white;
-    font-size: 1.6rem;
+    font-size: 1.3rem;
     padding: 20px;
     position: relative;
     cursor: pointer;
@@ -38,7 +42,7 @@ export default styled.div`
   }
 
   button:hover {
-    background-color: #ffd079;
+    background-color: #e5812a;
   }
 
   .info-section {
@@ -58,12 +62,13 @@ export default styled.div`
   .info-section p {
     text-align: center;
     margin-bottom: 20px;
-    width: fit-content;
-    word-break: break-all;
+    color: #535353;
+    /* word-break: break-all; */
+    font-size: 1rem;
   }
 
   .info-section .left p {
-    color: #ffa600;
+    /* color: #ffa600; */
   }
 
   .info-section .left {
@@ -71,18 +76,24 @@ export default styled.div`
     /* width: 25%; */
     padding: 20px;
     border-radius: 15px;
-    box-shadow: -5px -5px black;
-    flex-grow: 1;
+    /* box-shadow: -5px -5px black; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
   }
 
   .info-section .right {
+    /* display: flex; */
     padding: 20px;
     /* flex-grow: 5; */
     /* width: 75%; */
     border-radius: 15px;
-    box-shadow: 5px 5px #ffa600;
-    flex-grow: 1;
+    border-left: 10px solid #e17e27;
+    /* box-shadow: 5px 5px #ba5908; */
+    flex: 2;
   }
+
 
 `;
 
