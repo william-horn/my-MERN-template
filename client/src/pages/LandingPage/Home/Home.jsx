@@ -7,6 +7,7 @@ import { v4 as uuidv4 } from 'uuid';
 import Carousel from '../../../components/Carousel';
 import HomeThemeButtonPrimary from '../../../components/buttons/HomeThemeButtonPrimary';
 import PageContainer from '../../../components/PageContainer';
+import Attraction from '../../../components/Attraction';
 
 const Home = (props) => {
 
@@ -19,15 +20,18 @@ const Home = (props) => {
         </header>
 
         <div className="page-content">
-          <div className="info-section">
-            <div className="left">
+          <Attraction>
+            <Attraction.Left 
+              button="Check out our memes" 
+              buttonIcon="arrow_right"
+            >
               <p>Sometimes we make memes. They're pretty good. More text more text more text and more text.</p>
-              <HomeThemeButtonPrimary icon="arrow_right">Check out the memes</HomeThemeButtonPrimary>
-            </div>
-            <div className="right">
+            </Attraction.Left>
+
+            <Attraction.Right>
               <Carousel/>
-            </div>
-          </div>
+            </Attraction.Right>
+          </Attraction>
         </div>
       </PageContainer>
     </StyledHome>

@@ -41,7 +41,7 @@ const { ApolloServer } = require("apollo-server-express");
 /* Import Internals */
 /* ---------------- */
 const path = require("path");
-const { typeDefs, resolvers } = require("./schemaGQL");
+const { typeDefs, resolvers } = require("./schema");
 const dbConnection = require("./config/db-connection");
 
 /* ----------- */
@@ -56,9 +56,9 @@ const PORT = process.env.PORT || 3001;
 
 // Create new instance of apollo server for GraphQL requests
 const apolloServer = new ApolloServer({
-    typeDefs,
-    resolvers,
-    // context: authMiddleware,
+  typeDefs,
+  resolvers,
+  // context: authMiddleware,
 });
 
 
@@ -76,11 +76,11 @@ app.use(express.json());
 
 // Disable page serving when testing graphql with /graphql (browser graphql client)
 if (process.env.NODE_ENV === "production") {
-    app.use(express.static(path.join(__dirname, "../client/build")));
+  app.use(express.static(path.join(__dirname, "../client/build")));
 }
 
 app.get("*", (_, res) => {
-    res.sendFile(path.join(__dirname, "../client/build/index.html"));
+  res.sendFile(path.join(__dirname, "../client/build/index.html"));
 });
 
 /* ------------ */
@@ -89,20 +89,20 @@ app.get("*", (_, res) => {
 
 // Create apollo server runner
 const startApolloServer = async () => {
-    await apolloServer.start();
-    apolloServer.applyMiddleware({ app });
+  await apolloServer.start();
+  apolloServer.applyMiddleware({ app });
 
-    dbConnection.once("open", async () => {
-        console.log("database is open");
+  dbConnection.once("open", async () => {
+    console.log("database is open");
 
-        // -------------------------- //
-        // -> seed runners go here <- //
-        // -------------------------- //
-        
-        app.listen(PORT, () => {
-            console.log(`server running on port: ${PORT}`);
-        });
+    // -------------------------- //
+    // -> seed runners go here <- //
+    // -------------------------- //
+    
+    app.listen(PORT, () => {
+      console.log(`server running on port: ${PORT}`);
     });
+  });
 };
 
 // Call the async function to start the server

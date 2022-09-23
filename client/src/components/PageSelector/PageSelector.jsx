@@ -1,6 +1,5 @@
 
 import React from 'react';
-import StyledPageSelector from './StyledPageSelector.style';
 import { useStateContext } from '../../providers/StateProvider';
 
 const PageSelector = ({ children }) => {
@@ -14,9 +13,9 @@ const PageSelector = ({ children }) => {
   }
 
   return (
-    <StyledPageSelector>
+    <>
       {pages.filter(page => page.props.name === globalState.currentPage)}
-    </StyledPageSelector>
+    </>
   );
 };
 
