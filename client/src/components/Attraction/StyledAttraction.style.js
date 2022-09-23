@@ -30,6 +30,7 @@ export default styled.div`
   .attraction-left {
     /* flex-grow: 1; */
     /* width: 25%; */
+    margin-bottom: 30px;
     padding: 20px;
     /* border-radius: 15px; */
     box-shadow: -5px -5px 15px #8b8b8b;
@@ -41,7 +42,11 @@ export default styled.div`
 
   .attraction-right {
     /* display: flex; */
+    /* margin-top: 25px; */
+    margin-bottom: 30px;
     padding: 20px;
+    min-width: 400px;
+    min-height: 200px;
     /* flex-grow: 5; */
     /* width: 75%; */
     border-radius: 15px;
