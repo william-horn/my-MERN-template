@@ -28,23 +28,6 @@ export default styled.div`
     width: fit-content;
   }
 
-  button {
-    border: 0;
-    border-radius: 15px;
-    background-color: #be5e0d;
-    color: white;
-    font-size: 1.3rem;
-    padding: 20px;
-    position: relative;
-    cursor: pointer;
-    display: inline;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  }
-
-  button:hover {
-    background-color: #e5812a;
-  }
-
   .info-section {
     /* background-color: black; */
     padding: 10px;
@@ -69,14 +52,15 @@ export default styled.div`
 
   .info-section .left p {
     /* color: #ffa600; */
+    text-align: left;
   }
 
   .info-section .left {
     /* flex-grow: 1; */
     /* width: 25%; */
     padding: 20px;
-    border-radius: 15px;
-    /* box-shadow: -5px -5px black; */
+    /* border-radius: 15px; */
+    box-shadow: -5px -5px 15px #8b8b8b;
     display: flex;
     flex-direction: column;
     justify-content: center;

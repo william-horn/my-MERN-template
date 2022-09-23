@@ -4,9 +4,9 @@ Global CSS Selectors
 */
 
 * {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
 p {
@@ -18,10 +18,7 @@ p {
 
 .material-symbols-outlined {
   padding-left: 7px;
-  top: 5px;
-  height: 2.3rem;
-  font-size: 1.6rem;
-  position: relative;
+  /* position: relative; */
 }
 
 .wireframe * {

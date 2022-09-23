@@ -4,7 +4,9 @@ import { images } from '../../assets';
 import { useStateContext, StateProvider } from '../../providers/StateProvider';
 import StyledPage from './StyledPage.style';
 import Header from './Header';
-import Body from './Body';
+import PageSelector from '../../components/PageSelector';
+import Home from './Home';
+import Profile from './Profile';
 
 const LandingPage = ({ }) => {
 
@@ -15,7 +17,10 @@ const LandingPage = ({ }) => {
     <StyledPage>
       <StateProvider state={{currentPage, setCurrentPage, currentPageType, setCurrentPageType}}>
         <Header/>
-        <Body/>
+        <PageSelector>
+          <Home name="home"/>
+          <Profile name="will"/>
+        </PageSelector>
       </StateProvider>
     </StyledPage>
   )

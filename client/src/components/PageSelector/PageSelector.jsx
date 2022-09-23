@@ -1,9 +1,11 @@
 
 import React from 'react';
 import StyledPageSelector from './StyledPageSelector.style';
+import { useStateContext } from '../../providers/StateProvider';
 
-const PageSelector = ({ children, currentPage }) => {
+const PageSelector = ({ children }) => {
   let pages;
+  const globalState = useStateContext();
 
   if (Array.isArray(children)) {
     pages = children;
@@ -13,7 +15,7 @@ const PageSelector = ({ children, currentPage }) => {
 
   return (
     <StyledPageSelector>
-      {pages.filter(page => page.props.name === currentPage)}
+      {pages.filter(page => page.props.name === globalState.currentPage)}
     </StyledPageSelector>
   );
 };
