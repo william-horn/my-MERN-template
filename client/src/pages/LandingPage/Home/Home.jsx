@@ -12,6 +12,7 @@ import Header from '../../../components/Header';
 import NormalText from '../../../components/styles/NormalText.style';
 import PrimaryText from '../../../components/styles/PrimaryText.style';
 import NormalLink from '../../../components/styles/NormalLink.style';
+import GroupRow from '../../../components/styles/GroupRow.style';
 
 const Home = (props) => {
 
@@ -23,28 +24,32 @@ const Home = (props) => {
       />
 
       <Attraction>
-        <Attraction.Left>
+        <Attraction.Head>
           <PrimaryText>Sometimes we make memes.</PrimaryText>
           <PrimaryText>They're pretty good.</PrimaryText>
           <NormalText>We also have a meme channel in our <NormalLink>discord.</NormalLink></NormalText>
-          <HomeThemeButtonPrimary icon="arrow_right" direction="right">Check out our memes</HomeThemeButtonPrimary>
-        </Attraction.Left>
+          <HomeThemeButtonPrimary>Check out our memes</HomeThemeButtonPrimary>
+        </Attraction.Head>
 
-        <Attraction.Right>
-          <Carousel speed="20s" opacity="0.7"/>
-        </Attraction.Right>
+        <Attraction.Body>
+          <PrimaryText>Hello world</PrimaryText>
+          <Carousel speed="20s" opacity="0.7" onHover="true"/>
+        </Attraction.Body>
       </Attraction>
 
       <Attraction>
-        <Attraction.Right>
-          <p>Some of our memes:</p>
-          <Carousel speed="20s" opacity="0.7"/>
-        </Attraction.Right>
-
-        <Attraction.Left>
+        <Attraction.Head>
+          <PrimaryText>Try it out!</PrimaryText>
           <NormalText>Sometimes we make memes. They're pretty good. More text more text more text and more text.</NormalText>
-          <HomeThemeButtonPrimary icon="arrow_left" direction="left">Check out our memes</HomeThemeButtonPrimary>
-        </Attraction.Left>
+          <GroupRow gap="10px" justifyContent="flex-start">
+            <HomeThemeButtonPrimary>Yes</HomeThemeButtonPrimary>
+            <HomeThemeButtonPrimary>Maybe later</HomeThemeButtonPrimary>
+          </GroupRow>
+        </Attraction.Head>
+
+        <Attraction.Body>
+          <PrimaryText>Some of our memes:</PrimaryText>
+        </Attraction.Body>
       </Attraction>
     </PageContent>
   );

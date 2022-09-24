@@ -19,12 +19,12 @@ p {
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-.material-symbols-outlined .right-icon {
+.material-symbols-outlined.right-icon {
   padding-left: 5px;
   /* position: relative; */
 }
 
-.material-symbols-outlined .left-icon {
+.material-symbols-outlined.left-icon {
   padding-right: 5px;
   /* position: relative; */
 }

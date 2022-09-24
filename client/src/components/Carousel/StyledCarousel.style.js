@@ -43,6 +43,10 @@ export default styled.div`
     position: absolute;
     height: 100%;
     opacity: ${({opacity}) => opacity || 1};
+    /* animation: scroll ${({speed}) => speed || "10s"} linear infinite; */
+  }
+
+  .carousel-slide-track${({onHover}) => onHover === 'true' ? ':hover' : ''} {
     animation: scroll ${({speed}) => speed || "10s"} linear infinite;
   }
 

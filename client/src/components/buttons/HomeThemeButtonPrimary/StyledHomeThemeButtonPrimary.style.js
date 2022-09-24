@@ -10,14 +10,13 @@ export default styled.button`
   padding: 20px;
   position: relative;
   cursor: pointer;
-  display: inline;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   display: flex;
   justify-content: center;
-  transition: background-color 0.2s, padding-left 0.3s;
+  transition: background-color 0.2s, padding 0.3s;
 
   &:hover {
     background-color: #e5812a;
-    padding-left: 30px;
+    ${({textPop, direction = 'right'}) => textPop !== 'false' ? (direction === 'left' ? 'padding-right: 30px' : 'padding-left: 30px') : ''};
   }
 `;

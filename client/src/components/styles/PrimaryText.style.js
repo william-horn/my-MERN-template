@@ -2,6 +2,10 @@
 
 import styled from 'styled-components';
 
-export default styled.p`
+const PrimaryText = styled.p`
   font-family: 'Rubik Mono One', sans-serif;
 `
+
+PrimaryText.defaultProps = { className: 'primary text' };
+
+export default PrimaryText;
