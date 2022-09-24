@@ -1,9 +1,30 @@
 
 import React from 'react';
-import StyledAttraction from './StyledAttraction.style';
+// import StyledAttraction from './StyledAttraction.style';
 import styled from 'styled-components';
 
-const Left = styled.div`
+const Attraction = styled.div`
+  padding: 10px;
+  width: 100%;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-grow: 1;
+  gap: 10%;
+
+  p {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #535353;
+    /* word-break: break-all; */
+    font-size: 1rem;
+  }
+`;
+
+const Left = styled(Attraction)`
   /* flex-grow: 1; */
   /* width: 25%; */
   margin-bottom: 30px;
@@ -21,7 +42,7 @@ const Left = styled.div`
   }
 `;
 
-const Right = styled.div`
+const Right = styled(Attraction)`
   /* display: flex; */
   /* margin-top: 25px; */
   /* display: flex;
@@ -45,27 +66,6 @@ const Right = styled.div`
 
   &::-webkit-scrollbar {
     width: 8px;
-  }
-`;
-
-const Attraction = styled.div`
-  padding: 10px;
-  width: 100%;
-  margin-bottom: 20px;
-  margin-top: 20px;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: space-between;
-  flex-grow: 1;
-  gap: 10%;
-
-  p {
-    text-align: center;
-    margin-bottom: 20px;
-    color: #535353;
-    /* word-break: break-all; */
-    font-size: 1rem;
   }
 `;
 
