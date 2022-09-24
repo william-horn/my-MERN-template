@@ -1,12 +1,15 @@
 
 import styled from 'styled-components';
 
-export default styled.div`
+const Headshot = styled.div`
   user-select: none;
-  width: ${({size}) => size};
-  height: ${({size}) => size};
-  min-width: ${({minSize, size}) => minSize || size};
-  min-height: ${({minSize, size}) => minSize || size};
+
+  ${({size, minSize=size}) => `
+    width: ${size};
+    height: ${size};
+    min-width: ${minSize};
+    min-height: ${minSize};
+  `}
   
   display: inline-block;
   margin-left: 20px;
@@ -108,3 +111,6 @@ export default styled.div`
 
 `
 
+Headshot.defaultProps = { className: 'headshot' };
+
+export default Headshot;

@@ -1,6 +1,6 @@
 
 import React from 'react';
-import StyledCarousel from './StyledCarousel.style';
+import StyledCarousel from './StyledCarousel.styled';
 import { images } from '../../assets';
 
 const Carousel = (props) => {

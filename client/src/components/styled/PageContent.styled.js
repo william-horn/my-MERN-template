@@ -1,7 +1,7 @@
 
 import styled from 'styled-components';
 
-export default styled.div`
+const PageContent = styled.div`
   margin-right: ${({marginRight}) => marginRight || "20%"};
   margin-left: ${({marginLeft}) => marginLeft || "20%"};
 
@@ -16,3 +16,6 @@ export default styled.div`
   }
 `;
 
+PageContent.defaultProps = { className: 'page-content' };
+
+export default PageContent;

@@ -1,7 +1,7 @@
 
 
 import React from 'react';
-import StyledHeadshot from './StyledHeadshot.style';
+import StyledHeadshot from './StyledHeadshot.styled';
 
 const Headshot = ({ name, size, minSize, img, onClick, active, inactive }) => {
   return (

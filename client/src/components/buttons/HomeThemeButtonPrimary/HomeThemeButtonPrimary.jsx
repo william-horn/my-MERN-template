@@ -1,6 +1,6 @@
 
 import React, { useState, useRef } from 'react';
-import StyledHomeThemeButtonPrimary from './StyledHomeThemeButtonPrimary.style';
+import StyledHomeThemeButtonPrimary from './StyledHomeThemeButtonPrimary.styled';
 
 const HomeThemeButtonPrimary = ({ children, icon, direction, textPop }) => {
 

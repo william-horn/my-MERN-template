@@ -1,6 +1,5 @@
 
 import React from 'react';
-// import StyledAttraction from './StyledAttraction.style';
 import styled from 'styled-components';
 
 const Attraction = styled.div`

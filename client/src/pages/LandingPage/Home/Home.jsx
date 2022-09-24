@@ -1,27 +1,26 @@
 
 import React, { useRef, useEffect, useState } from 'react';
 import { images } from '../../../assets';
-import BackgroundImage from '../../../components/BackgroundImage';
 import { v4 as uuidv4 } from 'uuid';
 import Carousel from '../../../components/Carousel';
 import HomeThemeButtonPrimary from '../../../components/buttons/HomeThemeButtonPrimary';
-import PageContent from '../../../components/styles/PageContent.style';
-import PageContainer from '../../../components/styles/PageContainer.style';
-import Attraction from '../../../components/Attraction';
-import Header from '../../../components/Header';
-import NormalText from '../../../components/styles/NormalText.style';
-import PrimaryText from '../../../components/styles/PrimaryText.style';
-import NormalLink from '../../../components/styles/NormalLink.style';
-import GroupRow from '../../../components/styles/GroupRow.style';
+import PageContent from '../../../components/styled/PageContent.styled';
+import Container from '../../../components/styled/Container.styled';
+import Attraction from '../../../components/styled/Attraction.styled';
+import Header from '../../../components/styled/Header.styled';
+import NormalText from '../../../components/styled/NormalText.styled';
+import PrimaryText from '../../../components/styled/PrimaryText.styled';
+import NormalLink from '../../../components/styled/NormalLink.styled';
+import GroupRow from '../../../components/styled/GroupRow.styled';
 
 const Home = (props) => {
 
   return (
     <PageContent>
-      <Header 
-        title="Welcome to Jwsband"
-        subTitle={"\"This is where the fun begins\""}
-      />
+      <Header>
+        <Header.Title>Welcome to Jwsband</Header.Title>
+        <Header.Subtext>"This is where the fun begins"</Header.Subtext>
+      </Header>
 
       <Attraction>
         <Attraction.Head>
@@ -33,7 +32,7 @@ const Home = (props) => {
 
         <Attraction.Body>
           <PrimaryText>Hello world</PrimaryText>
-          <Carousel speed="20s" opacity="0.7" onHover="true"/>
+          <Carousel speed="40s" opacity="0.7" startOnHover="true"/>
         </Attraction.Body>
       </Attraction>
 

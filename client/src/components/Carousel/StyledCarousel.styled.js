@@ -42,13 +42,14 @@ export default styled.div`
     display: flex;
     position: absolute;
     height: 100%;
-    opacity: ${({opacity}) => opacity || 1};
+    opacity: ${({opacity='1'}) => opacity};
     /* animation: scroll ${({speed}) => speed || "10s"} linear infinite; */
   }
 
-  .carousel-slide-track${({onHover}) => onHover === 'true' ? ':hover' : ''} {
-    animation: scroll ${({speed}) => speed || "10s"} linear infinite;
-  }
+  ${({startOnHover='false', speed='10s'}) => `
+    .carousel-slide-track { animation: scroll ${speed} linear infinite; }
+    ${startOnHover === 'true' && '&:not(:hover) .carousel-slide-track { animation-play-state: paused; }'}
+  `}
 
   /* Each carousel image */
   img {
