@@ -1,14 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const ImageContainer = styled.div`
+const StyledImageContainer = styled.div`
   width: 100%;
   height: 100%;
   position: absolute;
   background-color: ${({backgroundColor='none'}) => backgroundColor};
 `
 
-const Image = styled.img`
+const StyledImage = styled.img`
   width: 100%;
   height: 100%;
   position: absolute;
@@ -18,13 +18,10 @@ const Image = styled.img`
 
 const BackgroundImage = ({opacity, img, backgroundColor}) => {
   return (
-    <ImageContainer backgroundColor={backgroundColor}>
-      <Image opacity={opacity} src={img}/>
-    </ImageContainer>
+    <StyledImageContainer className="background-image container" backgroundColor={backgroundColor}>
+      <StyledImage className="background-image image" opacity={opacity} src={img}/>
+    </StyledImageContainer>
   );
 }
-
-ImageContainer.defaultProps = { className: 'background-image-container' };
-Image.defaultProps = { className: 'background-image' };
 
 export default BackgroundImage;

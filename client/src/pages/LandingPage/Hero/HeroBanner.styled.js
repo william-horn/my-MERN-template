@@ -44,8 +44,8 @@ const StyledTitle = styled.h1`
 
 const Title = (props) => {
   return (
-    <StyledTitleContainer className="hero-title-container">
-      <StyledTitle className="hero-title" {...props}>{props.children}</StyledTitle>
+    <StyledTitleContainer className="hero-banner title-container">
+      <StyledTitle className="hero-banner title" {...props}>{props.children}</StyledTitle>
     </StyledTitleContainer>
   );
 }
@@ -62,13 +62,13 @@ const Members = styled.div`
   justify-content: center;
   overflow-x: hidden;
   overflow-y: auto;
-  min-width: 300px;
+  min-width: 200px;
 `;
 
 HeroBanner.defaultProps = { className: 'hero-banner' };
-Head.defaultProps = { className: 'hero-head' };
-Body.defaultProps = { className: 'hero-body' };
-Members.defaultProps = { className: 'members-container' };
+Head.defaultProps = { className: 'hero-banner head' };
+Body.defaultProps = { className: 'hero-banner body' };
+Members.defaultProps = { className: 'hero-banner members' };
 
 HeroBanner.Title = Title;
 HeroBanner.Head = Head;

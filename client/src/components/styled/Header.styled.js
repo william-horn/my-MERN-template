@@ -26,8 +26,8 @@ const Header = styled.header`
 `;
 
 Header.defaultProps = { className: 'header' };
-Title.defaultProps = { className: 'header-title' };
-Subtext.defaultProps = { className: 'header-title-subtext' };
+Title.defaultProps = { className: 'header title' };
+Subtext.defaultProps = { className: 'header subtext' };
 
 Header.Title = Title;
 Header.Subtext = Subtext;

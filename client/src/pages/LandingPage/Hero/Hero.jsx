@@ -5,7 +5,7 @@ import { images } from '../../../assets';
 import { v4 as uuidv4 } from 'uuid';
 import { useStateContext } from '../../../providers/StateProvider';
 import BackgroundImage from '../../../components/styled/BackgroundImage.styled';
-import HeroBanner from '../../../components/styled/HeroBanner.styled';
+import HeroBanner from './HeroBanner.styled';
 
 const Hero = () => {
   const globalState = useStateContext();

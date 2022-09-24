@@ -26,29 +26,30 @@ const Home = (props) => {
         <Attraction.Head>
           <PrimaryText>Sometimes we make memes.</PrimaryText>
           <PrimaryText>They're pretty good.</PrimaryText>
-          <NormalText>We also have a meme channel in our <NormalLink>discord.</NormalLink></NormalText>
+          <NormalText>We also have a meme channel in our <NormalLink href="https://www.youtube.com">discord.</NormalLink></NormalText>
           <HomeThemeButtonPrimary>Check out our memes</HomeThemeButtonPrimary>
         </Attraction.Head>
 
         <Attraction.Body>
-          <PrimaryText>Hello world</PrimaryText>
-          <Carousel speed="40s" opacity="0.7" startOnHover="true"/>
+          {/* <PrimaryText>Hello world</PrimaryText> */}
+          <Carousel speed="40s" opacity="0.7" flowDirection="right"/>
         </Attraction.Body>
       </Attraction>
 
       <Attraction>
-        <Attraction.Head>
+        <Attraction.Body skew="right" align="center">
+          <PrimaryText>Check out our videos:</PrimaryText>
+          <Carousel speed="40s" opacity="0.7" imageTrack={images.backgrounds.VideoList1} flowDirection="left"/>
+        </Attraction.Body>
+
+        <Attraction.Head skew="right" align="right">
           <PrimaryText>Try it out!</PrimaryText>
           <NormalText>Sometimes we make memes. They're pretty good. More text more text more text and more text.</NormalText>
-          <GroupRow gap="10px" justifyContent="flex-start">
+          <GroupRow gap="10px" justifyContent="flex-end">
             <HomeThemeButtonPrimary>Yes</HomeThemeButtonPrimary>
             <HomeThemeButtonPrimary>Maybe later</HomeThemeButtonPrimary>
           </GroupRow>
         </Attraction.Head>
-
-        <Attraction.Body>
-          <PrimaryText>Some of our memes:</PrimaryText>
-        </Attraction.Body>
       </Attraction>
     </PageContent>
   );

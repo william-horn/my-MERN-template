@@ -21,7 +21,7 @@ const LandingPage = () => {
           setCurrentPageType
         }}>
         <Hero/>
-        <Container minHeight="100vh" padding="40px 20px 20px 20px">
+        <Container minHeight="100vh" paddingTop="40px" backgroundColor="blue">
           <PageSelector>
             <Home name="home"/>
             <Profile name="will"/>

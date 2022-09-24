@@ -1,7 +1,7 @@
 
 import styled from 'styled-components';
 
-export default styled.button`
+const StyledHomeThemeButtonPrimary = styled.button`
   border: 0;
   border-radius: 15px;
   background-color: #be5e0d;
@@ -20,3 +20,7 @@ export default styled.button`
     ${({textPop, direction = 'right'}) => textPop !== 'false' ? (direction === 'left' ? 'padding-right: 30px' : 'padding-left: 30px') : ''};
   }
 `;
+
+StyledHomeThemeButtonPrimary.defaultProps = { className: 'button primary' };
+
+export default StyledHomeThemeButtonPrimary;

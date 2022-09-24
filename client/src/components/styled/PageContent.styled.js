@@ -10,7 +10,12 @@ const PageContent = styled.div`
     margin-left: 10%;
   }
 
-  @media screen and (max-width: 1300px) {
+  @media screen and (max-width: 1200px) {
+    margin-right: 30px;
+    margin-left: 30px;
+  }
+
+  @media screen and (max-width: 600px) {
     margin-right: 0;
     margin-left: 0;
   }

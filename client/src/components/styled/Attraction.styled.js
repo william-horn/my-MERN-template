@@ -94,8 +94,8 @@ const Body = styled.div`
 `;
 
 Attraction.defaultProps = { className: 'attraction' };
-Head.defaultProps = { className: 'attraction-head' };
-Body.defaultProps = { className: 'attraction-body' };
+Head.defaultProps = { className: 'attraction head' };
+Body.defaultProps = { className: 'attraction body' };
 
 Attraction.Head = Head;
 Attraction.Body = Body;

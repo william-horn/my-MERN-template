@@ -1,17 +1,46 @@
 
 import React from 'react';
-import StyledCarousel from './StyledCarousel.styled';
+import CarouselFrame from './CarouselFrame.styled';
 import { images } from '../../assets';
 
+/*
+  todo: add stuff like:
+
+  <Carousel title="my carousel">
+    <Carousel.Track>
+      ...
+    </Carousel.Track>
+  </Carousel>
+
+  add props:
+    - pauseOnHover
+    - speedOnHover?
+
+  current props:
+    - startOnHover
+    - speed
+    - flowDirection
+    - opacity
+  
+*/
+
 const Carousel = (props) => {
+  const {
+    imageTrack=images.memes.MemeBackground3,
+    speed='10s',
+    startOnHover='false',
+    flowDirection='left',
+    opacity='1'
+  } = props;
+
+  // todo: change data-start-on-hover to 'startOnHover' with styled component props for consistency
   return (
-    <StyledCarousel 
-      className="carousel-container" {...props}>
-      <div className="carousel-slide-track">
-        <img src={images.memes.MemeBackground3} alt="" />
-        <img src={images.memes.MemeBackground3} alt="" />
-      </div>
-    </StyledCarousel>
+    <CarouselFrame data-start-on-hover={startOnHover}>
+      <CarouselFrame.Slider speed={speed} flowDirection={flowDirection} opacity={opacity}>
+        <img src={imageTrack} alt="" />
+        <img src={imageTrack} alt="" />
+      </CarouselFrame.Slider>
+    </CarouselFrame>
   );
 };
 
