@@ -6,7 +6,7 @@ export default styled.header`
   background-color: #ff7300;
   width: 100%;
   position: relative;
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
 
   .header-body {
     padding-top: 20px;

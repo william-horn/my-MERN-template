@@ -1,14 +1,12 @@
 
-import React, { useState, useRef } from 'react';
+import React from 'react';
 import StyledCarousel from './StyledCarousel.style';
-import { v4 as uuidv4 } from 'uuid';
 import { images } from '../../assets';
-import { useAnimationFrame } from '../../hooks';
-import { useEffect } from 'react';
 
-const Carousel = () => {
+const Carousel = (props) => {
   return (
-    <StyledCarousel className="carousel-container">
+    <StyledCarousel 
+      className="carousel-container" {...props}>
       <div className="carousel-slide-track">
         <img src={images.memes.MemeBackground3} alt="" />
         <img src={images.memes.MemeBackground3} alt="" />

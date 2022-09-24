@@ -1,7 +1,7 @@
 
 import React, { useRef } from 'react';
 import Headshot from '../../../components/Headshot';
-import StyledHeader from './StyledHeader.style';
+import StyledHeader from './StyledHero.style';
 import { images } from '../../../assets';
 import { v4 as uuidv4 } from 'uuid';
 import { useStateContext } from '../../../providers/StateProvider';

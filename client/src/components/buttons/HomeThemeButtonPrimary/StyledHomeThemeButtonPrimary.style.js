@@ -14,8 +14,10 @@ export default styled.button`
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   display: flex;
   justify-content: center;
+  transition: background-color 0.2s, padding-left 0.3s;
 
   &:hover {
     background-color: #e5812a;
+    padding-left: 30px;
   }
 `;

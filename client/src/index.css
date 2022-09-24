@@ -10,14 +10,22 @@ Global CSS Selectors
 }
 
 p {
-  font-family: 'Rubik Mono One', sans-serif;
   font-size: 1.2rem;
   text-align: center;
   line-height: 2rem;
 }
 
-.material-symbols-outlined {
-  padding-left: 7px;
+.normal-text {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.material-symbols-outlined .right-icon {
+  padding-left: 5px;
+  /* position: relative; */
+}
+
+.material-symbols-outlined .left-icon {
+  padding-right: 5px;
   /* position: relative; */
 }
 
@@ -30,7 +38,7 @@ p {
 }
 
 ::-webkit-scrollbar-track {
-  background-color: #5a3f1d;
+  /* background-color: #5a3f1d; */
 }
 
 ::-webkit-scrollbar-thumb {

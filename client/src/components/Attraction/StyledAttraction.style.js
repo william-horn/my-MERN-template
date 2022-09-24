@@ -43,6 +43,9 @@ export default styled.div`
   .attraction-right {
     /* display: flex; */
     /* margin-top: 25px; */
+    /* display: flex;
+    flex-direction: column; */
+    overflow-y: auto;
     margin-bottom: 30px;
     padding: 20px;
     min-width: 400px;
@@ -51,8 +54,17 @@ export default styled.div`
     /* width: 75%; */
     border-radius: 15px;
     border-left: 10px solid #e17e27;
-    /* box-shadow: 5px 5px #ba5908; */
+    box-shadow: 5px 5px 10px #e2e2e2;
     flex: 2;
+    transition: border-left-width 0.3s;
+  }
+
+  .attraction-right:hover {
+    border-left-width: 20px;
+  }
+
+  .attraction-right::-webkit-scrollbar {
+    width: 8px;
   }
 `;
 

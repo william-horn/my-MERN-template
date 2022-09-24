@@ -1,6 +1,5 @@
 
 import styled from 'styled-components';
-import { images } from '../../assets';
 
 export default styled.div`
   width: 100%;
@@ -9,6 +8,7 @@ export default styled.div`
   position: relative;
   border-radius: 15px;
 
+  /* Carousel track animation */
   @keyframes scroll { 
     0% {
       transform: translateX(0);
@@ -19,6 +19,7 @@ export default styled.div`
     }
   }
 
+  /* Left/Right shadows */
   &::after,
   &::before {
     content: '';
@@ -36,23 +37,16 @@ export default styled.div`
     transform: rotateZ(180deg);
   }
 
+  /* Main carousel image container track */
   .carousel-slide-track {
-    /* width: 100%; */
     display: flex;
-    /* align-items: flex-start; */
-    /* justify-content: center; */
     position: absolute;
-    /* overflow: hidden; */
     height: 100%;
-    animation: scroll 10s linear infinite;
-    /* background-repeat: repeat-x; */
-    /* background-size: cover; */
-    /* width: 1749px; */
-    /* width: 2614px; */
-    /* min-width: 200px;
-    min-height: 100px; */
+    opacity: ${({opacity}) => opacity || 1};
+    animation: scroll ${({speed}) => speed || "10s"} linear infinite;
   }
 
+  /* Each carousel image */
   img {
     height: 100%;
     object-fit: cover;
