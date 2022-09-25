@@ -2,7 +2,7 @@
 import React, { useState, useRef } from 'react';
 import StyledHomeThemeButtonPrimary from './StyledHomeThemeButtonPrimary.styled';
 
-const HomeThemeButtonPrimary = ({ children, icon, direction, textPop }) => {
+const HomeThemeButtonPrimary = ({ children, icon, direction='right', textPop }) => {
 
   return (
     <StyledHomeThemeButtonPrimary textPop={textPop} direction={direction}>

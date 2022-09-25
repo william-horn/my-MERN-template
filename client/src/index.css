@@ -15,9 +15,14 @@ p {
   line-height: 2rem;
 }
 
-.normal-text {
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+/* todo: use styled component ThemeProvider instead of using css vars */
+:root {
+  --primary-color: #535353;
 }
+
+/* .normal-text {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+} */
 
 .material-symbols-outlined.right-icon {
   padding-left: 5px;

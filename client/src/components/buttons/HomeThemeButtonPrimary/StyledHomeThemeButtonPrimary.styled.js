@@ -17,7 +17,7 @@ const StyledHomeThemeButtonPrimary = styled.button`
 
   &:hover {
     background-color: #e5812a;
-    ${({textPop, direction = 'right'}) => textPop !== 'false' ? (direction === 'left' ? 'padding-right: 30px' : 'padding-left: 30px') : ''};
+    ${({textPop, direction}) => textPop !== 'false' ? (direction === 'left' ? 'padding-right: 30px' : 'padding-left: 30px') : ''};
   }
 `;
 

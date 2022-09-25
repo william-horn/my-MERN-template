@@ -17,13 +17,12 @@ const Attraction = styled.div`
   p {
     text-align: center;
     margin-bottom: 20px;
-    color: #535353;
-    /* word-break: break-all; */
+    /* color: #535353; */
+    color: var(--primary-color);
     font-size: 1rem;
   }
 
   ${props => {
-    console.log(props.children[0].props.className);
     return '';
   }}
 `;

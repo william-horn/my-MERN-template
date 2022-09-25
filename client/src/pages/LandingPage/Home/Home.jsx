@@ -13,6 +13,19 @@ import PrimaryText from '../../../components/styled/PrimaryText.styled';
 import NormalLink from '../../../components/styled/NormalLink.styled';
 import GroupRow from '../../../components/styled/GroupRow.styled';
 
+/*
+  todo: alternate attractions styles based on props and implement something like:
+
+  <AttractionGroup alternate="true" stagger="true">
+    <Attraction>
+      ...
+    </Attraction>
+    <Attraction>
+      ...
+    </Attraction>
+  </AttractionGroup>
+*/
+
 const Home = (props) => {
 
   return (
@@ -27,7 +40,7 @@ const Home = (props) => {
           <PrimaryText>Sometimes we make memes.</PrimaryText>
           <PrimaryText>They're pretty good.</PrimaryText>
           <NormalText>We also have a meme channel in our <NormalLink href="https://www.youtube.com">discord.</NormalLink></NormalText>
-          <HomeThemeButtonPrimary>Check out our memes</HomeThemeButtonPrimary>
+          <HomeThemeButtonPrimary icon="arrow_right">Check out our memes</HomeThemeButtonPrimary>
         </Attraction.Head>
 
         <Attraction.Body>
@@ -37,18 +50,15 @@ const Home = (props) => {
       </Attraction>
 
       <Attraction>
-        <Attraction.Body skew="right" align="center">
+        <Attraction.Body>
           <PrimaryText>Check out our videos:</PrimaryText>
           <Carousel speed="40s" opacity="0.7" imageTrack={images.backgrounds.VideoList1} flowDirection="left"/>
         </Attraction.Body>
 
-        <Attraction.Head skew="right" align="right">
-          <PrimaryText>Try it out!</PrimaryText>
-          <NormalText>Sometimes we make memes. They're pretty good. More text more text more text and more text.</NormalText>
-          <GroupRow gap="10px" justifyContent="flex-end">
-            <HomeThemeButtonPrimary>Yes</HomeThemeButtonPrimary>
-            <HomeThemeButtonPrimary>Maybe later</HomeThemeButtonPrimary>
-          </GroupRow>
+        <Attraction.Head>
+          <PrimaryText>We have a YouTube channel.</PrimaryText>
+          <NormalText>This is where we post nonsense that makes us laugh. Enjoy.</NormalText>
+          <HomeThemeButtonPrimary direction="left" icon="arrow_left">Check out our channel</HomeThemeButtonPrimary>
         </Attraction.Head>
       </Attraction>
     </PageContent>
