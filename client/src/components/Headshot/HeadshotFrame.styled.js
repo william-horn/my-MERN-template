@@ -69,9 +69,9 @@ const HeadshotFrame = styled.div`
   &[data-active=true] .headshot-frame.image {
     animation: headshotScaleBounce 0.8s cubic-bezier(0.17, 0.44, 0, 1.77) forwards;
   }
-  `;
+`;
 
-  const Image = styled.img`
+const Image = styled.img`
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -94,9 +94,9 @@ const ContentFrame = styled.div`
   align-items: center;
   background-color: rgba(250, 166, 74, 0.3);
   transition: all 0.25s;
-  `;
+`;
 
-  const Text = styled.p`
+const Text = styled.p`
   text-align: center;
   /* font-family: system-ui; */
   font-family: 'Bungee Spice', cursive;
