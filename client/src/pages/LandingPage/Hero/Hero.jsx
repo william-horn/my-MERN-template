@@ -6,9 +6,13 @@ import { v4 as uuidv4 } from 'uuid';
 import { useStateContext } from '../../../providers/StateProvider';
 import BackgroundImage from '../../../components/styled/BackgroundImage.styled';
 import HeroBanner from './HeroBanner.styled';
+import { useSharedStateContext } from '../../../providers/SharedStateProvider';
+import LandingPage from '../LandingPage';
 
 const Hero = () => {
   const globalState = useStateContext();
+  const sharedState = useSharedStateContext(LandingPage);
+  console.log('shared from hero: ', sharedState);
 
   const groupMembers = [
     { name: 'Will', img: images.collection.WillHeadshot, page: 'will' },

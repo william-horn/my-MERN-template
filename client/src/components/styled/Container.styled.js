@@ -23,9 +23,9 @@ const Container = styled.div`
     padding-top: ${paddingTop};
   `}
 
-  @media screen and (max-width: 450px) {
+  /* @media screen and (max-width: 450px) {
     
-  }
+  } */
 `;
 
 Container.defaultProps = { className: 'container' };

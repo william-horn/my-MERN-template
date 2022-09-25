@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
+import { SharedStateProvider } from './providers/SharedStateProvider';
 
 const allEl = document.querySelector("body");
 window.addEventListener("keydown", (event) => {
@@ -16,6 +17,8 @@ window.addEventListener("keydown", (event) => {
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-    <App />
+    <SharedStateProvider>
+      <App />
+    </SharedStateProvider>
 );
 

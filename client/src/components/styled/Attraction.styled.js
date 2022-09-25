@@ -21,10 +21,6 @@ const Attraction = styled.div`
     color: var(--primary-color);
     font-size: 1rem;
   }
-
-  ${props => {
-    return '';
-  }}
 `;
 
 const Head = styled.div`

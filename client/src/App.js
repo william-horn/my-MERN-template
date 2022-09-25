@@ -32,7 +32,9 @@ npm i react-router-dom graphql @apollo/client styled-components
 /* ---------------- */
 /* Import Internals */
 /* ---------------- */
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+import useTheme from './hooks/useTheme';
+import { ThemeProvider } from 'styled-components';
 import Test from './components/Test';
 import styled from 'styled-components';
 import { Event } from 'pseudo-events';
@@ -86,16 +88,18 @@ const client = new ApolloClient({
 /* Main App Component */
 /* ------------------ */
 function App() {
-
+  const [currentTheme, themeData, setCurrentTheme] = useTheme();
 
   return (
-    <ApolloProvider client={client}>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<LandingPage/>}/>
-        </Routes>
-      </BrowserRouter>
-    </ApolloProvider>
+    <ThemeProvider theme={themeData}>
+      <ApolloProvider client={client}>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<LandingPage/>}/>
+          </Routes>
+        </BrowserRouter>
+      </ApolloProvider>
+    </ThemeProvider>
   );
 }
 

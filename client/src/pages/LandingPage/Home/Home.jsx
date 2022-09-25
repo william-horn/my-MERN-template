@@ -44,7 +44,6 @@ const Home = (props) => {
         </Attraction.Head>
 
         <Attraction.Body>
-          {/* <PrimaryText>Hello world</PrimaryText> */}
           <Carousel speed="40s" opacity="0.7" flowDirection="right"/>
         </Attraction.Body>
       </Attraction>
