@@ -1,49 +1,36 @@
 
 import React, { useState } from 'react';
-import { StateProvider } from '../../providers/StateProvider';
+import { ContextProvider } from '../../providers/ContextProvider';
 import Hero from './Hero';
 import PageSelector from '../../components/PageSelector';
 import Home from './Home';
-import Profile from './Profile';
 import Container from '../../components/styled/Container.styled';
-import { useSharedStateContext } from '../../providers/SharedStateProvider';
+import Enum from '../../enums';
+import { useSavedState } from '../../hooks/useSavedState';
 
 const LandingPage = () => {
   const [currentPage, setCurrentPage] = useState('home'); // home | will | josh | ...members
   const [currentPageType, setCurrentPageType] = useState('system'); // system | profile
 
-  
-  useSharedStateContext()
-    .set(LandingPage, {
-      currentPage, 
-      setCurrentPage, 
-      currentPageType, 
-      setCurrentPageType
-    });
-
   return (
-    <Container>
-      <StateProvider 
-        state={{
-          currentPage, 
-          setCurrentPage, 
-          currentPageType, 
-          setCurrentPageType
-        }}>
+    <ContextProvider 
+      source={Enum.ContextStore.LandingPage}
+      value={{currentPage, setCurrentPage, currentPageType, setCurrentPageType}}
+    >
+      <Container>
         <Hero/>
         <Container 
           minHeight="100vh" 
           paddingTop="40px" 
         >
-          <PageSelector>
+          <PageSelector context={Enum.ContextStore.LandingPage}>
             <Home name="home"/>
-            <Profile name="will"/>
           </PageSelector>
         </Container>
-      </StateProvider>
-    </Container>
+      </Container>
+    </ContextProvider>
   )
-}
+};
 
 
 export default LandingPage;

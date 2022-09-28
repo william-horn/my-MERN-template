@@ -33,11 +33,15 @@ npm i react-router-dom graphql @apollo/client styled-components
 /* Import Internals */
 /* ---------------- */
 import React, { useEffect, useState } from 'react';
-import useTheme from './hooks/useTheme';
+import { useSavedState } from './hooks/useSavedState';
 import { ThemeProvider } from 'styled-components';
 import Test from './components/Test';
-import styled from 'styled-components';
-import { Event } from 'pseudo-events';
+import Enum from './enums';
+import { ContextProvider } from './providers/ContextProvider';
+
+// Redux
+// import { useSelector, useDispatch } from 'react-redux';
+// import { setTheme } from './redux/slices/themeSlice';
 
 /* ---------------- */
 /* Import Externals */
@@ -60,9 +64,7 @@ import {
 } from "@apollo/client";
 
 // Import pages
-import {
-  LandingPage
-} from './pages';
+import { LandingPage } from './pages';
 
 
 /* ---------------------------- */
@@ -88,10 +90,12 @@ const client = new ApolloClient({
 /* Main App Component */
 /* ------------------ */
 function App() {
-  const [currentTheme, themeData, setCurrentTheme] = useTheme();
+  // const dispatch = useDispatch();
+  // const themeMode = useSelector(state => state.theme.mode);
+  const [theme, setTheme] = useSavedState(Enum.StorageKeys.Theme.value, Enum.Themes.Default.value);
 
   return (
-    <ThemeProvider theme={themeData}>
+    <ContextProvider source={Enum.ContextStore.App} value={{theme, setTheme}}>
       <ApolloProvider client={client}>
         <BrowserRouter>
           <Routes>
@@ -99,7 +103,7 @@ function App() {
           </Routes>
         </BrowserRouter>
       </ApolloProvider>
-    </ThemeProvider>
+    </ContextProvider>
   );
 }
 

@@ -1,18 +1,19 @@
 
-import React, { useRef } from 'react';
+import React, { useRef, useEffect } from 'react';
 import Headshot from '../../../components/Headshot';
 import { images } from '../../../assets';
 import { v4 as uuidv4 } from 'uuid';
-import { useStateContext } from '../../../providers/StateProvider';
 import BackgroundImage from '../../../components/styled/BackgroundImage.styled';
 import HeroBanner from './HeroBanner.styled';
-import { useSharedStateContext } from '../../../providers/SharedStateProvider';
-import LandingPage from '../LandingPage';
+import { useComponentContext } from '../../../providers/ContextProvider';
+import Enum from '../../../enums';
 
 const Hero = () => {
-  const globalState = useStateContext();
-  const sharedState = useSharedStateContext(LandingPage);
-  console.log('shared from hero: ', sharedState);
+  const { 
+    currentPage, 
+    setCurrentPage,
+    setCurrentPageType
+  } = useComponentContext(Enum.ContextStore.LandingPage);
 
   const groupMembers = [
     { name: 'Will', img: images.collection.WillHeadshot, page: 'will' },
@@ -24,8 +25,8 @@ const Hero = () => {
 
   const changePage = (page, type) => {
     return () => {
-      globalState.setCurrentPage(page);
-      globalState.setCurrentPageType(type);
+      setCurrentPage(page);
+      setCurrentPageType(type);
     }
   }
 
@@ -44,7 +45,7 @@ const Hero = () => {
               name={data.name} 
               img={data.img}
               onClick={changePage(data.page, 'profile')}
-              active={globalState.currentPage === data.page} // initial, true, false
+              active={currentPage === data.page} // initial, true, false
             />
           )}
         </HeroBanner.Members>

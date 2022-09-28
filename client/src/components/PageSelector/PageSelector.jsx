@@ -1,20 +1,14 @@
 
 import React from 'react';
-import { useStateContext } from '../../providers/StateProvider';
+import { useComponentContext } from '../../providers/ContextProvider';
 
-const PageSelector = ({ children }) => {
-  let pages;
-  const globalState = useStateContext();
-
-  if (Array.isArray(children)) {
-    pages = children;
-  } else {
-    pages = [children];
-  }
+const PageSelector = ({ children, context }) => {
+  const pages = Array.isArray(children) ? children : [children];
+  const { currentPage } = useComponentContext(context);
 
   return (
     <>
-      {pages.filter(page => page.props.name === globalState.currentPage)}
+      {pages.filter(page => page.props.name === currentPage)}
     </>
   );
 };
