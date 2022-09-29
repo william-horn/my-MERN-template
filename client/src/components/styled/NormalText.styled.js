@@ -3,10 +3,14 @@
 import styled from 'styled-components';
 
 const NormalText = styled.p`
-  color: #535353;
-  font-family: 'Kanit', sans-serif;
-  letter-spacing: 1px;
-  font-weight: 800;
+  ${({theme}) => `
+    color: ${theme.textTwo.color};
+    font-family: ${theme.textTwo.fontFamily};
+    letter-spacing: ${theme.textTwo.letterSpacing};
+    font-weight: ${theme.textTwo.fontWeight};
+    font-size: ${theme.textTwo.fontSize};
+    margin-bottom: ${theme.textTwo.marginBottom};
+  `}  
 `
 
 NormalText.defaultProps = { className: 'normal text' }

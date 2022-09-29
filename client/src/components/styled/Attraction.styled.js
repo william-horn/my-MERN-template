@@ -2,6 +2,26 @@
 import React from 'react';
 import styled from 'styled-components';
 
+export const AttractionGroup = styled.div` 
+  ${({alternate, stagger}) => `
+    ${alternate ? `
+      & > :nth-child(2n) .attraction.body {
+        order: -1;
+      }
+    ` : ''
+    }
+    ${stagger ? ` 
+      & > :nth-child(2n) {
+        margin-left: -5%;
+      }
+      & > :nth-child(2n-1) {
+        margin-left: 5%;
+      }
+    `: ''
+    }
+  `}
+`;
+
 const Attraction = styled.div`
   padding: 10px;
   width: 100%;
@@ -13,14 +33,6 @@ const Attraction = styled.div`
   justify-content: space-between;
   flex-grow: 1;
   gap: 10%;
-
-  p {
-    text-align: center;
-    margin-bottom: 20px;
-    /* color: #535353; */
-    color: var(--primary-color);
-    font-size: 1rem;
-  }
 `;
 
 const Head = styled.div`
@@ -88,6 +100,7 @@ const Body = styled.div`
   }
 `;
 
+AttractionGroup.defaultProps = { className: 'attraction-group' };
 Attraction.defaultProps = { className: 'attraction' };
 Head.defaultProps = { className: 'attraction head' };
 Body.defaultProps = { className: 'attraction body' };

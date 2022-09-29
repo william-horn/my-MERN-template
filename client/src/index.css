@@ -16,9 +16,6 @@ p {
 }
 
 /* todo: use styled component ThemeProvider instead of using css vars */
-:root {
-  --primary-color: #535353;
-}
 
 /* .normal-text {
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;

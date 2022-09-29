@@ -24,11 +24,15 @@ const HeadshotFrame = styled.div`
 
   @keyframes headshotScaleBounce {
     0% {
-      transform: scale(0);
+      transform: scale(1);
+    }
+
+    50% {
+      transform: scale(1.4);
     }
 
     100% {
-      transform: scale(1.2);
+      transform: scale(1);
     }
   } 
 
@@ -67,7 +71,7 @@ const HeadshotFrame = styled.div`
   }
 
   &[data-active=true] .headshot-frame.image {
-    animation: headshotScaleBounce 0.8s cubic-bezier(0.17, 0.44, 0, 1.77) forwards;
+    animation: headshotScaleBounce 0.4s cubic-bezier(0.17, 0.44, 0, 1.77) forwards;
   }
 `;
 

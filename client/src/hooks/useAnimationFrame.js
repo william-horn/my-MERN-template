@@ -16,7 +16,6 @@ export default (callback) => {
   useEffect(() => {
     animationRef.current = requestAnimationFrame(animationStep);
     return () => {
-      console.log('unmounting');
       cancelAnimationFrame(animationRef.current);
     }
   }, []);

@@ -34,6 +34,7 @@ npm i react-router-dom graphql @apollo/client styled-components
 /* ---------------- */
 import React, { useEffect, useState } from 'react';
 import { useSavedState } from './hooks/useSavedState';
+import themes from './themes.json';
 import { ThemeProvider } from 'styled-components';
 import Test from './components/Test';
 import Enum from './enums';
@@ -93,18 +94,26 @@ function App() {
   // const dispatch = useDispatch();
   // const themeMode = useSelector(state => state.theme.mode);
   const [theme, setTheme] = useSavedState(Enum.StorageKeys.Theme.value, Enum.Themes.Default.value);
+  const themeData = themes[theme];
+  // console.log('app rendered (theme): ', theme, themeData);
 
   return (
-    <ContextProvider source={Enum.ContextStore.App} value={{theme, setTheme}}>
-      <ApolloProvider client={client}>
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<LandingPage/>}/>
-          </Routes>
-        </BrowserRouter>
-      </ApolloProvider>
+    <ContextProvider source={Enum.ContextStore.App} value={{
+      setTheme,
+      themeData,
+    }}>
+      <ThemeProvider theme={themeData}>
+        <ApolloProvider client={client}>
+          <BrowserRouter>
+            <Routes>
+              <Route path="/" element={<LandingPage/>}/>
+            </Routes>
+          </BrowserRouter>
+        </ApolloProvider>
+      </ThemeProvider>
     </ContextProvider>
   );
 }
+
 
 export default App;

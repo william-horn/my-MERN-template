@@ -15,6 +15,12 @@ const Hero = () => {
     setCurrentPageType
   } = useComponentContext(Enum.ContextStore.LandingPage);
 
+  const {
+    themeData
+  } = useComponentContext(Enum.ContextStore.App);
+
+  // console.log('hero rendered');
+
   const groupMembers = [
     { name: 'Will', img: images.collection.WillHeadshot, page: 'will' },
     { name: 'Chris', img: images.collection.ChrisHeadshot, page: 'chris' },
@@ -32,7 +38,7 @@ const Hero = () => {
 
   return (
     <HeroBanner>
-      <BackgroundImage img={images.backgrounds.SquadPic2} opacity="0.3"/>
+      <BackgroundImage img={images.backgrounds[themeData.heroBackgroundImage]} opacity="0.3"/>
       <HeroBanner.Head>
         <HeroBanner.Title onClick={changePage('home', 'system')}>Jwsband</HeroBanner.Title>
       </HeroBanner.Head>
