@@ -20,7 +20,7 @@ const LandingPage = () => {
         <Hero/>
         <Container 
           minHeight="100vh" 
-          paddingTop="40px" 
+          paddingBottom="1px"
         >
           <PageSelector context={Enum.ContextSource.LandingPage}>
             <Home name="home"/>

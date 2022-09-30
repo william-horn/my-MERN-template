@@ -1,5 +1,6 @@
 
 import styled from 'styled-components';
+import { getMediaQuery } from '../../lib/helpers/mediaQueries';
 
 // todo: find general way to pass props directly from component to here
 // todo: find way to modularize responsiveness 
@@ -7,6 +8,8 @@ import styled from 'styled-components';
 const Container = styled.div`
   width: 100%;
   height: 100%;
+  position: relative;
+  
   ${({
     minHeight='initial', 
     padding='initial', 
@@ -26,6 +29,7 @@ const Container = styled.div`
   /* @media screen and (max-width: 450px) {
     
   } */
+  ${getMediaQuery}
 `;
 
 Container.defaultProps = { className: 'container' };

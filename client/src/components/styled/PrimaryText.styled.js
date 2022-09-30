@@ -3,8 +3,8 @@
 import styled from 'styled-components';
 
 const PrimaryText = styled.p`
-  ${({theme}) => `
-    color: ${theme.textOne.color};
+  ${({theme, color}) => `
+    color: ${color || theme.textOne.color};
     font-family: ${theme.textOne.fontFamily};
     font-size: ${theme.textOne.fontSize};
     margin-bottom: ${theme.textOne.marginBottom};

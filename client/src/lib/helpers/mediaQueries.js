@@ -21,11 +21,13 @@ const getMediaQueryString = (props, index) => `
 `
 
 export const getMediaQuery = (props) => {
-  let media = '';
+  let media = ``;
 
   for (let i = 0; i < colSizes.length; i++) {
     const col = colSizes[i];
-    if (props[col.name]) media += getMediaQueryString(props[col.name].replaceAll(';', ' !important;'), i);
+    if (props[col.name]) {
+      media += getMediaQueryString(props[col.name].replaceAll(';', ' !important;'), i);
+    }
   }
 
   return media;

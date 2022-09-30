@@ -4,7 +4,14 @@ import styled from 'styled-components';
 import { getMediaQuery } from '../../lib/helpers/mediaQueries';
 
 export const AttractionGroup = styled.div` 
-  ${({alternate, stagger}) => `
+  ${({
+    alternate, 
+    stagger,
+    marginLeft='initial',
+    marginRight='initial',
+    attractionWidth='100%',
+    justifyContent='center'
+  }) => `
     ${alternate ? `
       & > :nth-child(2n) .attraction.body {
         order: -1;
@@ -13,20 +20,31 @@ export const AttractionGroup = styled.div`
     }
     ${stagger ? ` 
       & > div:nth-of-type(2n) {
-        margin-left: -5%;
+        left: -5%;
       }
       & > div:nth-of-type(2n-1) {
-        margin-left: 5%;
+        left: 5%;
       }
     `: ''
     }
+    & > .attraction {
+      width: ${attractionWidth};
+      margin-left: ${marginLeft};
+      margin-right: ${marginRight};
+    }
+    ${justifyContent ? `
+      display: flex;
+      flex-direction: column;
+      align-items: ${justifyContent};
+    `: ''}
   `}
 
   ${getMediaQuery}
 `;
 
 const Attraction = styled.div`
-  padding: 10px;
+  /* padding: 10px; */
+  position: relative;
   width: 100%;
   margin-bottom: 20px;
   margin-top: 20px;
@@ -37,12 +55,13 @@ const Attraction = styled.div`
   flex-grow: 1;
   gap: 10%;
 
-  ${({swap, skew}) => `
+  ${({swap, skewRight, skewLeft}) => `
     ${swap ? `
       .body {
         order: -1;
       }
     `: ''}
+    left: ${skewRight ? '5%' : (skewLeft && '-5%')}
   `}
 `;
 
@@ -51,7 +70,7 @@ const Head = styled.div`
   /* width: 25%; */
   margin-bottom: 30px;
   padding: 20px;
-  min-width: 250px;
+  min-width: 285px;
   /* border-radius: 15px; */
   /* box-shadow: -5px -5px 20px #0000003b; */
   display: flex;
@@ -97,6 +116,10 @@ const Body = styled.div`
       text-align: ${align};
     }
   `}
+
+  &::-webkit-scrollbar-track {
+    background: none;
+  }
 
   &::-webkit-scrollbar {
     width: 8px;
