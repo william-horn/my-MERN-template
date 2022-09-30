@@ -1,21 +1,21 @@
 
 import React, { createContext, useContext } from 'react';
 
-const contextStore = new Map();
+const ContextSource = new Map();
 
 const getContext = source => {
-  let context = contextStore.get(source);
+  let context = ContextSource.get(source);
 
   if (!context) {
     context = createContext();
-    contextStore.set(source, context);
+    ContextSource.set(source, context);
   }
 
   return context;
 }
 
 export const useComponentContext = source => {
-  return useContext(contextStore.get(source));
+  return useContext(ContextSource.get(source));
 }
 
 export const ContextProvider = ({ children, value, source }) => {

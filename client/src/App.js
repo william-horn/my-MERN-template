@@ -33,12 +33,13 @@ npm i react-router-dom graphql @apollo/client styled-components
 /* Import Internals */
 /* ---------------- */
 import React, { useEffect, useState } from 'react';
-import { useSavedState } from './hooks/useSavedState';
+import { useLocalStorage } from './hooks/useLocalStorage';
 import themes from './themes.json';
 import { ThemeProvider } from 'styled-components';
 import Test from './components/Test';
 import Enum from './enums';
 import { ContextProvider } from './providers/ContextProvider';
+
 
 // Redux
 // import { useSelector, useDispatch } from 'react-redux';
@@ -93,12 +94,12 @@ const client = new ApolloClient({
 function App() {
   // const dispatch = useDispatch();
   // const themeMode = useSelector(state => state.theme.mode);
-  const [theme, setTheme] = useSavedState(Enum.StorageKeys.Theme.value, Enum.Themes.Default.value);
+  const [theme, setTheme] = useLocalStorage(Enum.StorageKeys.Theme.value, Enum.Themes.Default.value);
   const themeData = themes[theme];
   // console.log('app rendered (theme): ', theme, themeData);
 
   return (
-    <ContextProvider source={Enum.ContextStore.App} value={{
+    <ContextProvider source={Enum.ContextSource.App} value={{
       setTheme,
       themeData,
     }}>
@@ -114,6 +115,5 @@ function App() {
     </ContextProvider>
   );
 }
-
 
 export default App;

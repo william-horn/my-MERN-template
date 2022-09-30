@@ -13,11 +13,11 @@ const Hero = () => {
     currentPage, 
     setCurrentPage,
     setCurrentPageType
-  } = useComponentContext(Enum.ContextStore.LandingPage);
+  } = useComponentContext(Enum.ContextSource.LandingPage);
 
   const {
     themeData
-  } = useComponentContext(Enum.ContextStore.App);
+  } = useComponentContext(Enum.ContextSource.App);
 
   // console.log('hero rendered');
 

@@ -1,8 +1,8 @@
 
 import React from 'react';
 import { useQuery, useMutation } from '@apollo/client';
-import { GET_TEST } from '../utils/queries';
-import { POST_TEST } from '../utils/mutations';
+import { GET_TEST } from '../lib/graphql/queries';
+import { POST_TEST } from '../lib/graphql/mutations';
 
 const Test = () => {
 

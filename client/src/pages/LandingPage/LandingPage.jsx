@@ -6,7 +6,6 @@ import PageSelector from '../../components/PageSelector';
 import Home from './Home';
 import Container from '../../components/styled/Container.styled';
 import Enum from '../../enums';
-import { useSavedState } from '../../hooks/useSavedState';
 
 const LandingPage = () => {
   const [currentPage, setCurrentPage] = useState('home'); // home | will | josh | ...members
@@ -14,7 +13,7 @@ const LandingPage = () => {
 
   return (
     <ContextProvider 
-      source={Enum.ContextStore.LandingPage}
+      source={Enum.ContextSource.LandingPage}
       value={{currentPage, setCurrentPage, currentPageType, setCurrentPageType}}
     >
       <Container>
@@ -23,7 +22,7 @@ const LandingPage = () => {
           minHeight="100vh" 
           paddingTop="40px" 
         >
-          <PageSelector context={Enum.ContextStore.LandingPage}>
+          <PageSelector context={Enum.ContextSource.LandingPage}>
             <Home name="home"/>
           </PageSelector>
         </Container>

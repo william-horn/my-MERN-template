@@ -3,8 +3,8 @@
 import styled from 'styled-components';
 
 const NormalText = styled.p`
-  ${({theme}) => `
-    color: ${theme.textTwo.color};
+  ${({theme, color}) => `
+    color: ${color || theme.textTwo.color};
     font-family: ${theme.textTwo.fontFamily};
     letter-spacing: ${theme.textTwo.letterSpacing};
     font-weight: ${theme.textTwo.fontWeight};

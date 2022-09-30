@@ -1,6 +1,7 @@
 
 import React from 'react';
 import styled from 'styled-components';
+import { getMediaQuery } from '../../lib/helpers/mediaQueries';
 
 export const AttractionGroup = styled.div` 
   ${({alternate, stagger}) => `
@@ -11,15 +12,17 @@ export const AttractionGroup = styled.div`
     ` : ''
     }
     ${stagger ? ` 
-      & > :nth-child(2n) {
+      & > div:nth-of-type(2n) {
         margin-left: -5%;
       }
-      & > :nth-child(2n-1) {
+      & > div:nth-of-type(2n-1) {
         margin-left: 5%;
       }
     `: ''
     }
   `}
+
+  ${getMediaQuery}
 `;
 
 const Attraction = styled.div`
@@ -33,6 +36,14 @@ const Attraction = styled.div`
   justify-content: space-between;
   flex-grow: 1;
   gap: 10%;
+
+  ${({swap, skew}) => `
+    ${swap ? `
+      .body {
+        order: -1;
+      }
+    `: ''}
+  `}
 `;
 
 const Head = styled.div`
@@ -49,7 +60,7 @@ const Head = styled.div`
   flex: 1;
 
   ${({skew='left', align='left'}) => `
-    box-shadow: ${skew === 'left' ? '-5px -5px' : (skew === 'right' ? '5px -5px' : '0 0')} 20px #0000003b;
+    box-shadow: ${skew === 'left' ? '-5px -5px' : (skew === 'right' ? '5px -5px' : '0 0')} 20px #0000008a;
     .text {
       text-align: ${align};
     }
@@ -98,6 +109,8 @@ const Body = styled.div`
   &:hover::-webkit-scrollbar-thumb  {
     background: rgba(135, 135, 135, 0.3);
   }
+
+  ${getMediaQuery}
 `;
 
 AttractionGroup.defaultProps = { className: 'attraction-group' };

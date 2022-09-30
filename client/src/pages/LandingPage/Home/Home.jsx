@@ -31,13 +31,22 @@ const Home = (props) => {
   // console.log('home rendered');
 
   return (
-    <PageContent>
+    <PageContent 
+      col_12="margin-left: 20%; margin-right: 20%;"
+      col_9="margin-left: 10%; margin-right: 10%;"
+      col_6="margin-left: 20px; margin-right: 20px;"
+    >
       <Header>
         <Header.Title>Welcome to Jwsband</Header.Title>
         <Header.Subtext>"This is where the fun begins"</Header.Subtext>
       </Header>
 
-      <AttractionGroup alternate stagger>
+      <AttractionGroup 
+        alternate 
+        stagger 
+        col_6=".attraction { margin-inline: 0; }"
+        col_5=".body { min-width: 400px } .text { text-align: center; }"
+      >
         <Attraction>
           <Attraction.Head>
             <PrimaryText>Sometimes we make memes.</PrimaryText>
@@ -52,13 +61,13 @@ const Home = (props) => {
         </Attraction>
 
         <Attraction>
-          <Attraction.Head>
+          <Attraction.Head skew="right" align="left">
             <PrimaryText>We have a YouTube channel.</PrimaryText>
             <NormalText>This is where we post nonsense that makes us laugh. Enjoy.</NormalText>
             <HomeThemeButtonPrimary direction="left" icon="arrow_left">Check out our channel</HomeThemeButtonPrimary>
           </Attraction.Head>
 
-          <Attraction.Body>
+          <Attraction.Body skew="right">
             <PrimaryText>Check out our videos:</PrimaryText>
             <Carousel speed="90s" opacity="0.7" imageTrack={images.backgrounds.VideoList1} flowDirection="left"/>
           </Attraction.Body>
@@ -68,25 +77,26 @@ const Home = (props) => {
           <Attraction.Head>
             <PrimaryText>We have a YouTube channel.</PrimaryText>
             <NormalText>This is where we post nonsense that makes us laugh. Enjoy.</NormalText>
-            <HomeThemeButtonPrimary direction="left" icon="arrow_left">Check out our channel</HomeThemeButtonPrimary>
+            <HomeThemeButtonPrimary icon="arrow_right">Check out our channel</HomeThemeButtonPrimary>
           </Attraction.Head>
 
           <Attraction.Body>
             <PrimaryText>Check out our videos:</PrimaryText>
-            <Carousel speed="90s" opacity="0.7" imageTrack={images.backgrounds.VideoList1} flowDirection="left"/>
+            {/* <Carousel speed="90s" opacity="0.7" imageTrack={images.backgrounds.VideoList1} flowDirection="left"/> */}
           </Attraction.Body>
         </Attraction>
 
         <Attraction>
-          <Attraction.Head>
+          <Attraction.Head skew="right">
             <PrimaryText>We have a YouTube channel.</PrimaryText>
             <NormalText>This is where we post nonsense that makes us laugh. Enjoy.</NormalText>
             <HomeThemeButtonPrimary direction="left" icon="arrow_left">Check out our channel</HomeThemeButtonPrimary>
           </Attraction.Head>
 
-          <Attraction.Body>
+          <Attraction.Body skew="right">
             <PrimaryText>Check out our videos:</PrimaryText>
-            <Carousel speed="90s" opacity="0.7" imageTrack={images.backgrounds.VideoList1} flowDirection="left"/>
+            <NormalText>You see, we have lots of great videos. We have millions of dollars to spend on quality production.</NormalText>
+            {/* <Carousel speed="90s" opacity="0.7" imageTrack={images.backgrounds.VideoList1} flowDirection="left"/> */}
           </Attraction.Body>
         </Attraction>
       </AttractionGroup>

@@ -1,9 +1,9 @@
 
 import EnumItem from './enum-item';
 
-const ContextStore = {
+const ContextSource = {
     LandingPage: new EnumItem('LandingPage', 'landing page component'),
     App: new EnumItem('App', 'main application component'),
 }
 
-export default ContextStore;
+export default ContextSource;
