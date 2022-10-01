@@ -1,7 +1,7 @@
 
 import styled from 'styled-components';
 
-const StyledHomeThemeButtonPrimary = styled.button`
+const StyledPrimaryButton = styled.button`
   ${({theme, textPop, direction}) => `
     background-color: ${theme.buttonOne.backgroundColor};
     color: ${theme.buttonOne.color};
@@ -24,6 +24,6 @@ const StyledHomeThemeButtonPrimary = styled.button`
   transition: background-color 0.2s, padding 0.3s;
 `;
 
-StyledHomeThemeButtonPrimary.defaultProps = { className: 'button primary' };
+StyledPrimaryButton.defaultProps = { className: 'button primary' };
 
-export default StyledHomeThemeButtonPrimary;
+export default StyledPrimaryButton;

@@ -3,23 +3,25 @@
   "default": {
     "heroBackgroundImage": "SquadPic2",
 
-    "colorOne": "#e17e27",
-    "colorTwo": "#bf5f0e",
-    "colorThree": "white",
+    "colorOne": "black",
+    "colorTwo": "#3d204a",
+    "colorThree": "#682e81",
+    "colorFour": "#546298",
+    "colorFive": "#1e284f",
 
     "headshot": {
       "boxShadow": "0 0 10px #ff5050"
     },
 
     "textOne": {
-      "color": "#535353",
+      "color": "white",
       "fontFamily": "'Rubik Mono One', sans-serif",
       "fontSize": "1rem",
       "marginBottom": "20px"
     },
 
     "textTwo": {
-      "color": "#535353",
+      "color": "white",
       "fontFamily": "'Kanit', sans-serif",
       "letterSpacing": "1px",
       "fontWeight": "800",

@@ -1,33 +1,24 @@
 
-import React, { useState } from 'react';
-import { ContextProvider } from '../../providers/ContextProvider';
-import Hero from './Hero';
-import PageSelector from '../../components/PageSelector';
-import Home from './Home';
+import React, { useRef, useEffect, useState } from 'react';
+import { useComponentContext } from '../../providers/ContextProvider';
 import Container from '../../components/styled/Container.styled';
+import RowGroup from '../../components/styled/RowGroup.styled';
+import PrimaryText from '../../components/styled/PrimaryText.styled';
+import PrimaryButton from '../../components/buttons/PrimaryButton';
+import NormalText from '../../components/styled/NormalText.styled';
+import Header from '../../components/styled/Header.styled';
 import Enum from '../../enums';
 
 const LandingPage = () => {
-  const [currentPage, setCurrentPage] = useState('home'); // home | will | josh | ...members
-  const [currentPageType, setCurrentPageType] = useState('system'); // system | profile
+  const { themeData } = useComponentContext(Enum.ContextSource.App);
 
   return (
-    <ContextProvider 
-      source={Enum.ContextSource.LandingPage}
-      value={{currentPage, setCurrentPage, currentPageType, setCurrentPageType}}
-    >
-      <Container>
-        <Hero/>
-        <Container 
-          minHeight="100vh" 
-          paddingBottom="1px"
-        >
-          <PageSelector context={Enum.ContextSource.LandingPage}>
-            <Home name="home"/>
-          </PageSelector>
-        </Container>
-      </Container>
-    </ContextProvider>
+    <Container backgroundColor="black" minHeight="100vh">
+      <Header>
+        <NormalText>Something cool</NormalText>
+        <PrimaryButton>Something else</PrimaryButton>
+      </Header>
+    </Container>
   )
 };
 

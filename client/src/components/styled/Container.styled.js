@@ -16,7 +16,8 @@ const Container = styled.div`
     paddingLeft='initial', 
     paddingRight='initial',
     paddingTop='initial',
-    paddingBottom='initial'
+    paddingBottom='initial',
+    backgroundColor='initial',
   }) => `
     min-height: ${minHeight};
     padding: ${padding};
@@ -24,6 +25,7 @@ const Container = styled.div`
     padding-right: ${paddingRight};
     padding-bottom: ${paddingBottom};
     padding-top: ${paddingTop};
+    background-color: ${backgroundColor};
   `}
 
   /* @media screen and (max-width: 450px) {
