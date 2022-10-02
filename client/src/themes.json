@@ -32,44 +32,16 @@
     "buttonOne": {
       "color": "white",
       "colorHover": "white",
-      "backgroundColor": "#bf5f0e",
-      "backgroundColorHover": "#e17e27",
+      "backgroundColor": "#3d204a",
+      "backgroundColorHover": "#682e81",
       "fontFamily": "'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif"
-    }
-  },
-
-  "galaxy": {
-    "heroBackgroundImage": "Galaxy",
-
-    "colorOne": "#e17e27",
-    "colorTwo": "#bf5f0e",
-    "colorThree": "white",
-
-    "headshot": {
-      "boxShadow": "0 0 10px #ffffff"
     },
 
-    "textOne": {
-      "color": "#535353",
-      "fontFamily": "'Rubik Mono One', sans-serif",
-      "fontSize": "1rem",
-      "marginBottom": "20px"
-    },
-
-    "textTwo": {
-      "color": "#535353",
-      "fontFamily": "'Kanit', sans-serif",
-      "letterSpacing": "1px",
-      "fontWeight": "800",
-      "fontSize": "1rem",
-      "marginBottom": "20px"
-    },
-
-    "buttonOne": {
+    "buttonTwo": {
       "color": "white",
       "colorHover": "white",
-      "backgroundColor": "#bf5f0e",
-      "backgroundColorHover": "#e17e27",
+      "backgroundColor": "#3d204a",
+      "backgroundColorHover": "#682e81",
       "fontFamily": "'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif"
     }
   }

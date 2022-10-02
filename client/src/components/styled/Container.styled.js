@@ -6,8 +6,6 @@ import { getMediaQuery } from '../../lib/helpers/mediaQueries';
 // todo: find way to modularize responsiveness 
 
 const Container = styled.div`
-  width: 100%;
-  height: 100%;
   position: relative;
   
   ${({
@@ -18,6 +16,7 @@ const Container = styled.div`
     paddingTop='initial',
     paddingBottom='initial',
     backgroundColor='initial',
+    fill='true',
   }) => `
     min-height: ${minHeight};
     padding: ${padding};
@@ -26,6 +25,8 @@ const Container = styled.div`
     padding-bottom: ${paddingBottom};
     padding-top: ${paddingTop};
     background-color: ${backgroundColor};
+    width: ${fill === 'true' ? '100%' : 'initial'};
+    height: ${fill === 'true' ? '100%' : 'initial'};
   `}
 
   /* @media screen and (max-width: 450px) {
