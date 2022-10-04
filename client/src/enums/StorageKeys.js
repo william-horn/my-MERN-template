@@ -1,5 +1,5 @@
 
-import EnumItem from './enum-item';
+import EnumItem from './EnumItem';
 const keyPrefix = 'jwsband_app:';
 
 const StorageKeys = {

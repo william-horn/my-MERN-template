@@ -34,11 +34,10 @@ npm i react-router-dom graphql @apollo/client styled-components
 /* ---------------- */
 import React, { useEffect, useState } from 'react';
 import { useLocalStorage } from './hooks/useLocalStorage';
+import AppProvider from './providers/AppProvider';
 import themes from './themes.json';
-import { ThemeProvider } from 'styled-components';
 import Test from './components/Test';
 import Enum from './enums';
-import { ContextProvider } from './providers/ContextProvider';
 
 
 // Redux
@@ -92,27 +91,23 @@ const client = new ApolloClient({
 /* Main App Component */
 /* ------------------ */
 function App() {
-  // const dispatch = useDispatch();
-  // const themeMode = useSelector(state => state.theme.mode);
-  const [theme, setTheme] = useLocalStorage(Enum.StorageKeys.Theme.value, Enum.Themes.Default.value);
-  const themeData = themes[theme];
-  // console.log('app rendered (theme): ', theme, themeData);
+  const [themeMode, setThemeMode] = useLocalStorage(Enum.StorageKeys.Theme.value, Enum.Themes.Default.value);
+  const themeData = themes[themeMode];
 
   return (
-    <ContextProvider source={Enum.ContextSource.App} value={{
-      setTheme,
+    <AppProvider value={{
+      setThemeMode,
+      themeMode,
       themeData,
     }}>
-      <ThemeProvider theme={themeData}>
-        <ApolloProvider client={client}>
-          <BrowserRouter>
-            <Routes>
-              <Route path="/" element={<LandingPage/>}/>
-            </Routes>
-          </BrowserRouter>
-        </ApolloProvider>
-      </ThemeProvider>
-    </ContextProvider>
+      <ApolloProvider client={client}>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<LandingPage/>}/>
+          </Routes>
+        </BrowserRouter>
+      </ApolloProvider>
+    </AppProvider>
   );
 }
 

@@ -1,5 +1,5 @@
 
-import EnumItem from './enum-item';
+import EnumItem from './EnumItem';
 
 const ContextSource = {
     LandingPage: new EnumItem('LandingPage', 'landing page component'),

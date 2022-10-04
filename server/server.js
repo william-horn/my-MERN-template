@@ -42,7 +42,7 @@ const { ApolloServer } = require("apollo-server-express");
 /* ---------------- */
 const path = require("path");
 const { typeDefs, resolvers } = require("./schema");
-const dbConnection = require("./config/db-connection");
+const dbConnection = require("./config/dbConnection");
 
 /* ----------- */
 /* Config Vars */
